@@ -13,7 +13,7 @@ const emailTemplate = fs.readFileSync(emailTemplatePath, "utf8");
 
 // Configure the Nodemailer transporter
 const transporter = nodemailer.createTransport({
-  host: "naveenportfolio.site",
+  host: "fitwin.co",
   port: 465, // Use the appropriate port (e.g., 465 for secure SSL)
   secure: true, // Use SSL
   auth: {
@@ -89,7 +89,14 @@ router.post("/", async (req, res) => {
           mail: "Appointment Mail Has Been Sent",
           firstname,
           lastname,
+          company,
+          country,
           email,
+          date,
+          time,
+          number,
+          message,
+          service,
         });
       }
     });
